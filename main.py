@@ -1,33 +1,26 @@
-def play_game():
+import random
 
-    positions = [2, 4, 6] 
-    weights = [300, 200, 213]
+def find_cargo():
+    my_entered_positions = [2, 4, 6]
+    weights = [250,240,223]
+    total_weight_must_be = 713
+    positions = my_entered_positions[:]
 
-    total_weight = sum(weights) 
-
-    guessed_weight = 0
-    attempts = 0
-
-
-    print("Welcome to the Martian Cargo Treasure Hunt!")
-    print("Try to guess the locations of the 3 hidden cargo boxes.")
-    print("The boxes are hidden somewhere between kilometers 1 and 7.")
-
-    while guessed_weight != total_weight:
-        guessed_weight = 0
-        guessed_positions = []
+    while True:
+        teacher_positions = []
         for i in range(3):
-           guess = int(input(f"Guess the location of box {i+1} (1-7): "))
-           if guess in positions:
-                guessed_positions.append(guess)
-                guessed_weight += weights[positions.index(guess)]
-                print(f"Found box {i+1} at kilometer {guess}, it weighs {weights[positions.index(guess)]} kg!")
-           else:
-               print(f"Box {i+1} is not at kilometer {guess}. Try again!")
-        if guessed_weight == total_weight:
-            print(f"Congratulations! You've found all the boxes with a total weight of {guessed_weight} kg.")
+            km = int(input(f"Please Mr. Tauheed Khan enter the kilometer for box {i + 1}: "))
+            teacher_positions.append(km)
+            
+        total_found_weight = 0
+        for km in teacher_positions:
+            if km in positions:
+                total_found_weight += weights[positions.index(km)]
+
+        if total_found_weight == total_weight_must_be:
+            print("Cargo found and the total weight is correct!")
             break
         else:
-            print(f"Sorry, you need to try again! Your current total weight is {guessed_weight} kg.")
-        attempts += 1
-play_game()
+            print(" Unfortunately incorrect. The positions of the boxes will change. It is okay, you can try again.")
+            positions = random.sample(range(1, 7), 3)
+find_cargo()
