@@ -33,3 +33,4 @@ if len(shot) != 2 or shot[0] not in 'ABCDEFG' or not shot[1].isdigit():
         input("Click Enter to continue...")
         continue
 col, row = 'ABCDEFG'.index(shot[0]), int(shot[1]) - 1
+
