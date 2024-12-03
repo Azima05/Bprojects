@@ -36,7 +36,7 @@ play_again = True
 first_round = True
 while play_again:
     if first_round:
-    ships = [
+        ships = [
         [(2, 2), (2, 3), (2, 4)],  
         [(4, 5), (5, 5)],
         [(4, 1), (4, 2)],    
@@ -44,13 +44,16 @@ while play_again:
         [(0, 3)], 
         [(0, 0)],   
         [(6, 0)] 
-    ]
+        ]
+        first_round = False
+    else:
+        ships = randomize_ships()
     board = [['♥' for _ in range(7)] for _ in range(7)]
-
     ship_positions = []
     for ship in ships:
         for coord in ship:
             ship_positions.append(coord)
+            
     shots = 0
 
     while ship_positions: 
