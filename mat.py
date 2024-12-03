@@ -70,7 +70,7 @@ while play_again:
 
         if not (0 <= row < 7 and 0 <= col < 7) or board[row][col] != '♥':
             print("Invalid or already shot! Try again.")
-            input("Press Enter to continue...")
+            input("Click Enter to continue...")
             continue
 
         shots += 1
