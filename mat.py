@@ -88,6 +88,10 @@ while play_again:
     print(f"Congratulations, {name}! You sank all the ships in {shots} shots!")
     play_again_input = input("Do you want to play again? (yes/no): ").strip().lower()
     if play_again_input == 'yes':
-        play_again = True  
+        play_again = True 
+    else:
+        play_again = False 
+        print("Thank you for playing!")
+
     
 
