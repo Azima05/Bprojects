@@ -33,8 +33,9 @@ print("Welcome to ALA-TOO Battleship!")
 name = input("WHAT IS YOUR NAME? ")
 
 play_again = True
+first_round = True
 while play_again:
-   
+    if first_round:
     ships = [
         [(2, 2), (2, 3), (2, 4)],  
         [(4, 5), (5, 5)],
@@ -83,7 +84,7 @@ while play_again:
             print("Miss!")
             board[row][col] = 'M'
     
-        input("Press Enter to continue...")
+        input("Click Enter to continue...")
 
     print(f"Congratulations, {name}! You sank all the ships in {shots} shots!")
     play_again_input = input("Do you want to play again? (yes/no): ").strip().lower()
