@@ -2,11 +2,11 @@ user_info = {}
 
 user_info["name"] = input("Enter your name: ")
 
-user_info["age"] = int(input("Enter your age: "))  # Convert input to integer
+user_info["age"] = int(input("Enter your age: "))  
 
 user_info["city"] = input("Enter your city: ")
 
-user_info["has_pet"] = input("Do you have a pet? (yes/no): ").lower() == 'yes'  # Convert to boolean
+user_info["has_pet"] = input("Do you have a pet? (yes/no): ").lower() == 'yes'  
 
 print("\nUser Information:")
 print(f"Name: {user_info['name']}")
